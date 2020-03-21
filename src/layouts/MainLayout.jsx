@@ -12,7 +12,7 @@ const MainLayout = () => {
   const [buildings, setBuildings] = useState([]);
 
   const fetchBuildings = async () => {
-    const apiCall = await fetch('http://localhost:5000/api/buildings');
+    const apiCall = await fetch('https://googleassistantbookingapi.azurewebsites.net/api/buildings');
     const buildingsArray = await apiCall.json();
     setBuildings(buildingsArray);
   };
