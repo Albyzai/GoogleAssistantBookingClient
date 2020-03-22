@@ -25,16 +25,19 @@ const StyledBuilding = styled.div`
   min-width: 230px;
 `;
 
-const Building = ({ name, floors }) => {
-  console.log('building name: ', name);
+const Building = ({ building, onRoomClickhandler }) => {
+
+  const clickHandler = (floorId, roomId) => {
+    onRoomClickhandler(building._id, floorId, roomId)
+  }
   return (
     <Wrapper>
       <Header>
-        <p>{name}</p>
+        <p>{building.name}</p>
       </Header>
       <StyledBuilding>
-        {floors.map((floor) => (
-          <Floor rooms={floor.rooms} name={floor.name} key={floor.name} />
+        {building.floors.map((floor) => (
+          <Floor floor={floor} parentbuilding={building} key={floor._id} onRoomClickhandler={clickHandler} />
         ))}
       </StyledBuilding>
     </Wrapper>

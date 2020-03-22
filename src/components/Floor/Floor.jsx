@@ -20,18 +20,24 @@ const Header = styled.div`
 const StyledFloor = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
   padding: 10px;
 `;
 
-const Floor = ({ name, rooms }) => {
+const Floor = ({ floor, onRoomClickhandler }) => {
+
+  const clickHandler = (roomId) => {
+    onRoomClickhandler(floor._id, roomId)
+  }
+  
   return (
     <Wrapper>
       <Header>
-        <p>{name}</p>
+        <p>{floor.name}</p>
       </Header>
       <StyledFloor>
-        {rooms.map((room) => (
-          <Room name={room.name} />
+        {floor.rooms.map((room) => (
+          <Room key={room._id} room={room} parentFloor={floor} onRoomClickhandler={clickHandler} />
         ))}
       </StyledFloor>
     </Wrapper>
