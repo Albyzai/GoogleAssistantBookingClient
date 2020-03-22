@@ -26,7 +26,7 @@ const MainLayout = () => {
 
   const fetchBuildings = async () => {
     // const apiCall = await fetch('https://googleassistantbookingapi.azurewebsites.net/api/buildings');
-    const buildingsArray = await axios.get('http://localhost:5000/api/buildings').then(res => res.data)
+    const buildingsArray = await axios.get('https://googleassistantbookingapi.azurewebsites.net//api/buildings').then(res => res.data)
     setBuildings(buildingsArray);
   };
 
