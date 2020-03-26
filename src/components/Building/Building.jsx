@@ -5,13 +5,17 @@ import Floor from './../Floor/Floor';
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 50px;
-  background: lightblue;
+  background: #fff;
+  box-shadow: 0 1px 10px rgba(0,0,0,0.05), 0 1px 12px rgba(0,0,0,0.1);
+  margin: 10px 0;
+  padding: 15px;
 `;
 
 const Header = styled.div`
-  padding: 10px;
-  border-bottom: 1px solid #000;
+  
+  border-bottom: 1px solid rgba(34,36,38,.15);
+  font-weight: 900;
+  padding-bottom: 10px;
   p {
     margin: 0;
   }
@@ -20,9 +24,9 @@ const Header = styled.div`
 const StyledBuilding = styled.div`
   display: flex;
   flex-direction: column;
-
   min-height: 400px;
-  min-width: 230px;
+  min-width: 265px;
+  
 `;
 
 const Building = ({ building, onRoomClickhandler }) => {

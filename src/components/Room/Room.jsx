@@ -4,16 +4,29 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  background: ${props => props.isVacant ? 'green' : 'red'};
-  color: ${props => props.isVacant ? '#fff': '#000'}
+  background: ${props => props.isVacant ? '#39fa73' : '#ff5c40'};
+  color: ${props => props.isVacant ? '#000': '#000'};
   border-radius: 10px;
-  border: 1px solid black;
   padding: 10px;
+  font-weight: 100;
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  font-size: .8em;
+  text-align: center;
+  &:hover {
+    box-shadow: 0 1px 10px rgba(0,0,0,0.05), 0 1px 12px rgba(0,0,0,0.1);
+  }
 `;
 
 const StyledRoom = styled.div`
   display: flex;
   flex-direction: row;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
   
   
 `;
@@ -28,7 +41,7 @@ const Room = ({ room, parentFloor, onRoomClickhandler }) => {
   return (
     <Wrapper onClick={onClickHandler} isVacant={room.vacant}>
       <StyledRoom>
-        <h5>{room.name}</h5>
+        {room.name}
       </StyledRoom>
     </Wrapper>
   );

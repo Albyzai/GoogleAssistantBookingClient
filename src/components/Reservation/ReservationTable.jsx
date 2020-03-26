@@ -6,9 +6,7 @@ const StyledList = styled.div`
 width: 100%;
 display: flex;
 flex-direction: column;
-
-
-
+margin-bottom: 50px;
 `
 
 const Wrapper = styled.div`
@@ -19,14 +17,14 @@ const Wrapper = styled.div`
 
 const ReservationTable = ({ room, className }) =>  {
 
+  const reservations = room.reservations.map(res => <Reservation data={res} />)
   return (
     <Wrapper>
     <h3>Reservations for  {room.name}</h3>
     <StyledList>
-      {room.reservations.map(reservation => (<Reservation data={reservation} />))}
+      { reservations ? reservations : <p>There are no reservations for this room, be the first!</p>}
     </StyledList>
     </Wrapper>
-      
   )
 }
 

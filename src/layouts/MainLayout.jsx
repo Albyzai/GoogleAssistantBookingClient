@@ -3,21 +3,22 @@ import styled from 'styled-components';
 import Building from '../components/Building/Building';
 import ReservationTable from '../components/Reservation/ReservationTable'
 import axios from 'axios'
-import { act } from 'react-dom/test-utils';
 
 const MainWrapper = styled.div`
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   width: 80%;
-  margin: 100px auto;
+  margin: 0 auto;
+  padding-top: 50px;
 `;
 
 
 const ReservationsWrapper = styled.div`
   display: flex;
   width: 80%;
-  margin: 100px auto;
+  margin: 0 auto;
 `
 const MainLayout = () => {
   const [buildings, setBuildings] = useState([]);
